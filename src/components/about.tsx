@@ -107,7 +107,29 @@ const About = ({ offset, factor = 1 }: { offset: number; factor?: number }) => (
     </Divider>
     <Content speed={0.4} offset={offset} factor={factor}>
       <Inner>
-        <h1>about</h1>
+        <h1>About Me</h1>
+        <p>
+          Nithin is a full stack developer, who also has experience performing
+          other roles such as production support executive and test automation
+          developer. Nithin grew up in India, where he earned his bachelors
+          degree in Bio-Medical Engineering. He moved to Canada in 2016 for
+          studies, where he obtained his masters degree in Computer Engineering
+          from University of Victoria.
+        </p>
+        <p>
+          He started his journey in Information Technology by performing
+          multiple roles in Tata Consultancy Services back in India. After
+          earning his masters degree, he joined Vivid Solutions Inc as a
+          developer and contributed in different projects including wildfire
+          one. He later moved to BC Pensions, where he helped the automation
+          team in many process improvements. In 2021, he joined Ministry of
+          Citizen Services, APS team where he played an important role in some
+          tech advancements.
+        </p>
+        <p>
+          When not working, Nithin enjoys cooking, hiking, watching tech videos,
+          and playing chess.
+        </p>
       </Inner>
     </Content>
   </div>

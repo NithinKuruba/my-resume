@@ -6,7 +6,7 @@ import Content from "../elements/content";
 import Svg from "./svg";
 import { UpDown, UpDownWide } from "../styles/animations";
 
-const Projects = ({
+const Skills = ({
   offset,
   factor = 2,
 }: {
@@ -16,12 +16,13 @@ const Projects = ({
   <div>
     <Divider
       bg="linear-gradient(to right, SlateBlue 0%, DeepSkyBlue 100%)"
-      sx={{ clipPath: `polygon(0 15%, 100% 25%, 100% 85%, 0 75%)` }}
+      clipPath="polygon(0 15%, 100% 25%, 100% 85%, 0 75%)"
       speed={-0.2}
-      offset={1.1}
+      offset={offset}
       factor={factor}
     />
-    <Content speed={0.4} offset={offset + 0.2} factor={factor}>
+
+    <Content speed={0.4} offset={offset} factor={factor}>
       <Inner>
         <div
           sx={{
@@ -31,7 +32,7 @@ const Projects = ({
             h2: { gridColumn: `-1/1`, color: `white !important` },
           }}
         >
-          <h2>Projects</h2>
+          <h2>Skills</h2>
         </div>
       </Inner>
     </Content>
@@ -136,4 +137,4 @@ const Projects = ({
   </div>
 );
 
-export default Projects;
+export default Skills;

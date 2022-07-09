@@ -141,14 +141,12 @@ const Title = ({ offset, factor = 1 }: { offset: number; factor?: number }) => (
         top="70%"
       />
     </Divider>
-    <Content
-      sx={{ variant: `texts.bigger` }}
-      speed={0.4}
-      offset={offset}
-      factor={factor}
-    >
+    <Content speed={0.4} offset={offset} factor={factor}>
       <Inner>
-        <h1>Hello, I'm {JSONData.basics.name}</h1>
+        <div sx={{ fontSize: [3, 4, 5], fontWeight: "bold" }}>
+          <h1>Hello, I'm Nithin Shekar Kuruba</h1>
+          <p>Full Stack Developer</p>
+        </div>
       </Inner>
     </Content>
   </div>

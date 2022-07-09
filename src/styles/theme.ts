@@ -39,15 +39,7 @@ const theme = merge(tailwind, {
     },
   },
   breakpoints: [`400px`, `600px`, `900px`, `1200px`, `1600px`],
-  footer: {
-    textAlign: `center`,
-    display: `block`,
-    position: `absolute`,
-    bottom: 0,
-    color: `textMuted`,
-    px: [2, 3],
-    py: [3, 4],
-  },
+
   styles: {
     root: {
       margin: 0,
@@ -116,6 +108,15 @@ const theme = merge(tailwind, {
       mb: 2,
       color: `heading`,
     },
+    footer: {
+      textAlign: `center`,
+      display: `block`,
+      position: `absolute`,
+      bottom: 0,
+      color: `textMuted`,
+      px: [2, 3],
+      py: [3, 4],
+    },
   },
   layout: {
     container: {
@@ -132,13 +133,6 @@ const theme = merge(tailwind, {
       px: 3,
       py: 2,
       ml: 3,
-    },
-  },
-  texts: {
-    bigger: {
-      p: {
-        fontSize: [2, 3, 4],
-      },
     },
   },
 });

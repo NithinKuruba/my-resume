@@ -1,55 +1,81 @@
-import { merge, Theme } from "theme-ui";
-import { tailwind } from "@theme-ui/presets";
+import { extendTheme } from "@chakra-ui/react";
 
-const theme = merge(tailwind, {
-  initialColorModeName: `dark`,
-  config: {
-    useCustomProperties: true,
-  },
+export const customTheme = extendTheme({
+  initialColorMode: "dark",
+  useSystemColorMode: false,
   colors: {
-    primary: tailwind.colors.orange[4],
-    secondary: tailwind.colors.indigo[6],
-    text: tailwind.colors.gray[3],
-    heading: tailwind.colors.white,
+    primary: `#f6ad55`,
+    secondary: `#5a67d8`,
+    text: `#e2e8f0`,
+    heading: `#ffffff`,
     background: `#141821`,
-    divider: tailwind.colors.gray[8],
-    textMuted: tailwind.colors.gray[5],
-    icon_brightest: tailwind.colors.white,
-    icon_darker: tailwind.colors.gray[7],
-    icon_darkest: tailwind.colors.gray[8],
-    icon_red: tailwind.colors.red[6],
-    icon_blue: tailwind.colors.blue[6],
-    icon_orange: tailwind.colors.orange[5],
-    icon_yellow: tailwind.colors.yellow[5],
-    icon_pink: tailwind.colors.pink[5],
-    icon_purple: tailwind.colors.purple[6],
-    icon_green: tailwind.colors.green[5],
+    divider: `#2d3748`,
+    textMuted: `#a0aec0`,
+    icon_brightest: `#ffffff`,
+    icon_darker: `#4a5568`,
+    icon_darkest: `#2d3748`,
+    icon_red: `#e53e3e`,
+    icon_blue: `#3182ce`,
+    icon_orange: `#ed8936`,
+    icon_yellow: `#ecc94b`,
+    icon_pink: `#ed64a6`,
+    icon_purple: `#9f7aea`,
+    icon_green: `#48bb78`,
     modes: {
       light: {
-        text: tailwind.colors.gray[8],
-        heading: tailwind.colors.black,
-        primary: tailwind.colors.orange[7],
-        background: tailwind.colors.gray[1],
-        divider: tailwind.colors.gray[2],
-        textMuted: tailwind.colors.gray[6],
-        icon_brightest: tailwind.colors.gray[2],
-        icon_darker: tailwind.colors.gray[4],
-        icon_darkest: tailwind.colors.gray[6],
+        text: `#2d3748`,
+        heading: `#000`,
+        primary: `#c05621`,
+        background: `#f7fafc`,
+        divider: `#edf2f7`,
+        textMuted: `#718096`,
+        icon_brightest: `#edf2f7`,
+        icon_darker: `#cbd5e0`,
+        icon_darkest: `#718096`,
       },
     },
   },
   breakpoints: [`400px`, `600px`, `900px`, `1200px`, `1600px`],
-
   styles: {
-    root: {
-      margin: 0,
-      padding: 0,
-      boxSizing: `border-box`,
-      textRendering: `optimizeLegibility`,
-      WebkitFontSmoothing: `antialiased`,
-      MozOsxFontSmoothing: `grayscale`,
-      color: `text`,
-      backgroundColor: `background`,
+    global: {
+      "html, body": {
+        width: "100vw",
+        background: "background",
+        margin: 0,
+        padding: 0,
+        boxSizing: `border-box`,
+        textRendering: `optimizeLegibility`,
+        WebkitFontSmoothing: `antialiased`,
+        MozOsxFontSmoothing: `grayscale`,
+        color: `text`,
+      },
+      "*": {
+        boxSizing: `inherit`,
+        "&:before": {
+          boxSizing: `inherit`,
+        },
+        "&:after": {
+          boxSizing: `inherit`,
+        },
+      },
+      html: {
+        fontSize: `18px`,
+        WebkitTextSizeAdjust: `100%`,
+      },
+      img: {
+        borderStyle: `none`,
+      },
+      pre: {
+        fontFamily: `monospace`,
+        fontSize: `1em`,
+      },
+      "[hidden]": {
+        display: `none`,
+      },
+      "::selection": {
+        backgroundColor: `primary`,
+        color: `background`,
+      },
       a: {
         color: `primary`,
         textDecoration: `none`,
@@ -59,82 +85,78 @@ const theme = merge(tailwind, {
           textDecoration: `none`,
         },
       },
-    },
-    p: {
-      fontSize: [1, 2],
-      letterSpacing: `-0.003em`,
-      lineHeight: `body`,
-      "--baseline-multiplier": 0.179,
-      "--x-height-multiplier": 0.35,
-      color: `text`,
-    },
-    blockquote: {
-      marginLeft: 0,
       p: {
-        fontSize: [2, 3],
-        fontWeight: `medium`,
+        fontSize: [1, 2],
+        letterSpacing: `-0.003em`,
+        lineHeight: `body`,
+        "--baseline-multiplier": 0.179,
+        "--x-height-multiplier": 0.35,
+        color: `text`,
+      },
+      blockquote: {
+        marginLeft: 0,
+        p: {
+          fontSize: [2, 3],
+          fontWeight: `medium`,
+          color: `heading`,
+        },
+      },
+      h1: {
+        fontSize: 8,
+        mt: 2,
+        mb: 3,
+        textShadow: `rgba(255, 255, 255, 0.15) 0px 5px 35px`,
+        letterSpacing: `wide`,
+        color: `heading`,
+      },
+      h2: {
+        fontSize: [4, 5, 6],
+        mt: 2,
+        mb: 2,
+        color: `heading`,
+      },
+      h3: {
+        fontSize: [3, 4, 5],
+        mt: 3,
+        color: `heading`,
+      },
+      h4: {
+        fontSize: [2, 3, 4],
+        color: `heading`,
+      },
+      h5: {
+        fontSize: [1, 2, 3],
+        color: `heading`,
+      },
+      h6: {
+        fontSize: 1,
+        mb: 2,
         color: `heading`,
       },
     },
-    h1: {
-      fontSize: [6, 7, 8],
-      mt: 2,
-      mb: 3,
-      textShadow: `rgba(255, 255, 255, 0.15) 0px 5px 35px`,
-      letterSpacing: `wide`,
-      color: `heading`,
+    layout: {
+      container: {
+        maxWidth: `5xl`,
+      },
     },
-    h2: {
-      fontSize: [4, 5, 6],
-      mt: 2,
-      mb: 2,
-      color: `heading`,
+    buttons: {
+      toggle: {
+        color: `background`,
+        border: `none`,
+        backgroundColor: `text`,
+        cursor: `pointer`,
+        alignSelf: `center`,
+        px: 3,
+        py: 2,
+        ml: 3,
+      },
     },
-    h3: {
-      fontSize: [3, 4, 5],
-      mt: 3,
-      color: `heading`,
-    },
-    h4: {
-      fontSize: [2, 3, 4],
-      color: `heading`,
-    },
-    h5: {
-      fontSize: [1, 2, 3],
-      color: `heading`,
-    },
-    h6: {
-      fontSize: 1,
-      mb: 2,
-      color: `heading`,
-    },
-    footer: {
-      textAlign: `center`,
-      display: `block`,
-      position: `absolute`,
-      bottom: 0,
-      color: `textMuted`,
-      px: [2, 3],
-      py: [3, 4],
-    },
-  },
-  layout: {
-    container: {
-      maxWidth: `5xl`,
-    },
-  },
-  buttons: {
-    toggle: {
-      color: `background`,
-      border: `none`,
-      backgroundColor: `text`,
-      cursor: `pointer`,
-      alignSelf: `center`,
-      px: 3,
-      py: 2,
-      ml: 3,
+    texts: {
+      bigger: {
+        p: {
+          fontSize: [2, 3, 4],
+        },
+      },
     },
   },
 });
-
-export default theme;

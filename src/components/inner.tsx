@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui";
-
 type InnerProps = {
   className?: string;
   children: React.ReactNode;
@@ -8,9 +5,10 @@ type InnerProps = {
 
 const Inner = ({ className = ``, children }: InnerProps) => (
   <div
-    sx={{
-      width: [`full`, `full`, `full`, `full`, `full`, `2/3`],
+    style={{
+      width: "100%",
       textAlign: `left`,
+      fontSize: 100,
     }}
     className={className}
   >

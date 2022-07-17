@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui";
+import { Box } from "@chakra-ui/react";
 import { ParallaxLayer } from "@react-spring/parallax";
 
 type ContentProps = {
@@ -18,9 +17,9 @@ const Content = ({
   factor = 1,
 }: ContentProps) => (
   <ParallaxLayer
-    sx={{
-      padding: [3, 4, 4, 5],
+    style={{
       display: `flex`,
+      padding: 5,
       flexDirection: `column`,
       alignItems: `center`,
       justifyContent: `center`,

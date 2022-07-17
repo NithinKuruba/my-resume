@@ -1,7 +1,20 @@
-/** @jsx jsx */
-import * as React from "react";
-import { jsx } from "theme-ui";
-import { hidden } from "../styles/utils";
+import { createIcon, useTheme } from "@chakra-ui/react";
+import React from "react";
+import { Icon } from "@chakra-ui/react";
+
+export const UpDownIcon = createIcon({
+  displayName: "UpDownIcon",
+  viewBox: "0 0 200 200",
+  d: "M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0",
+});
+
+const BoxIcon = createIcon({
+  displayName: "BoxIcon",
+  viewBox: "0 0 30 30",
+  path: (
+    <path d="M28,2V28H2V2H28m.13-2H1.88A1.88,1.88,0,0,0,0,1.88V28.13A1.88,1.88,0,0,0,1.88,30H28.13A1.87,1.87,0,0,0,30,28.13V1.88A1.88,1.88,0,0,0,28.13,0Z" />
+  ),
+});
 
 const icons = {
   triangle: {
@@ -94,22 +107,27 @@ const Svg = ({
   left,
   top,
   hiddenMobile = false,
-}: SVGProps) => (
-  <svg
-    sx={{
-      position: `absolute`,
-      stroke: stroke ? `currentColor` : `none`,
-      fill: stroke ? `none` : `currentColor`,
-      display: hiddenMobile ? hidden : `block`,
-      color,
-      width,
-      left,
-      top,
-    }}
-    viewBox={icons[icon].viewBox}
-  >
-    {icons[icon].shape}
-  </svg>
-);
+}: SVGProps) => {
+  const theme = useTheme();
+  return (
+    <>
+      <svg
+        style={{
+          position: "absolute",
+          stroke: stroke ? `currentColor` : `none`,
+          fill: stroke ? `none` : `currentColor`,
+          display: `block`,
+          width,
+          left,
+          top,
+        }}
+        color={eval(`theme.colors.${color}`)}
+        viewBox={icons[icon].viewBox}
+      >
+        {icons[icon].shape}
+      </svg>
+    </>
+  );
+};
 
 export default Svg;

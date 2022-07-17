@@ -1,29 +1,13 @@
-/** @jsx jsx */
-import { Box, Flex, Link, useColorMode, jsx } from "theme-ui";
+import { Box, Button, Flex, Link, useColorMode } from "@chakra-ui/react";
 
 const Footer = () => {
-  const [colorMode, setColorMode] = useColorMode();
-  const isDark = colorMode === `dark`;
-  const toggleColorMode = (e: any) => {
-    setColorMode(isDark ? `light` : `dark`);
-  };
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Box as="footer" variant="footer">
-      <button
-        sx={{
-          variant: `buttons.toggle`,
-          fontWeight: `semibold`,
-          display: `block`,
-          mx: `auto`,
-          mb: 3,
-        }}
-        onClick={toggleColorMode}
-        type="button"
-        aria-label="Toggle dark mode"
-      >
-        {isDark ? `Light` : `Dark`}
-      </button>
+    <Box display={"flex"} flexDirection={"column"}>
+      <Button onClick={toggleColorMode} color={`primary`}>
+        {colorMode === `dark` ? `Dark` : `Light`}
+      </Button>
       Copyright &copy; {new Date().getFullYear()}. All rights reserved.
       <br />
       <Flex
@@ -36,7 +20,7 @@ const Footer = () => {
           a: { color: `text` },
         }}
       >
-        {isDark ? (
+        {colorMode === `dark` ? (
           <img
             width="30"
             height="30"
@@ -59,7 +43,7 @@ const Footer = () => {
         >
           Theme
         </Link>
-        <div sx={{ mx: 1 }}>by</div>
+        <div>by</div>
         {` `}
         <Link
           aria-label="Link to the theme author's website"

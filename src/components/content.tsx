@@ -1,6 +1,5 @@
 import { Box } from "@chakra-ui/react";
 import { ParallaxLayer } from "@react-spring/parallax";
-import { jsx } from "@chakra-ui/react";
 
 type ContentProps = {
   speed: number;

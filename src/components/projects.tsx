@@ -28,8 +28,8 @@ const Projects = ({
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
               contentStyle={{
-                background: theme.colors.primary,
-                color: theme.colors.text,
+                background: eval(`theme.colors.primary`),
+                color: eval(`theme.colors.text`),
               }}
               contentArrowStyle={{
                 borderRight: "7px solid  rgb(33, 150, 243)",
@@ -53,8 +53,8 @@ const Projects = ({
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
               contentStyle={{
-                background: theme.colors.primary,
-                color: theme.colors.text,
+                background: eval(`theme.colors.primary`),
+                color: eval(`theme.colors.text`),
               }}
               iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
               icon={<MdWork />}
@@ -75,8 +75,8 @@ const Projects = ({
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
               contentStyle={{
-                background: theme.colors.primary,
-                color: theme.colors.text,
+                background: eval(`theme.colors.primary`),
+                color: eval(`theme.colors.text`),
               }}
               iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
               icon={<MdWork />}
@@ -97,8 +97,8 @@ const Projects = ({
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
               contentStyle={{
-                background: theme.colors.primary,
-                color: theme.colors.text,
+                background: eval(`theme.colors.primary`),
+                color: eval(`theme.colors.text`),
               }}
               iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
               icon={<MdWork />}
@@ -117,8 +117,8 @@ const Projects = ({
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
               contentStyle={{
-                background: theme.colors.primary,
-                color: theme.colors.text,
+                background: eval(`theme.colors.primary`),
+                color: eval(`theme.colors.text`),
               }}
               iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
               icon={<MdWork />}
@@ -136,8 +136,8 @@ const Projects = ({
             <VerticalTimelineElement
               className="vertical-timeline-element--education"
               contentStyle={{
-                background: theme.colors.primary,
-                color: theme.colors.text,
+                background: eval(`theme.colors.primary`),
+                color: eval(`theme.colors.text`),
               }}
               iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
               icon={<MdClass />}
@@ -154,8 +154,8 @@ const Projects = ({
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
               contentStyle={{
-                background: theme.colors.primary,
-                color: theme.colors.text,
+                background: eval(`theme.colors.primary`),
+                color: eval(`theme.colors.text`),
               }}
               iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
               icon={<MdWork />}
@@ -176,8 +176,8 @@ const Projects = ({
             <VerticalTimelineElement
               className="vertical-timeline-element--education"
               contentStyle={{
-                background: theme.colors.primary,
-                color: theme.colors.text,
+                background: eval(`theme.colors.primary`),
+                color: eval(`theme.colors.text`),
               }}
               iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
               icon={<MdClass />}

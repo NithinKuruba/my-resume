@@ -5,20 +5,30 @@ import Content from "./content";
 import Svg from "./svg";
 import { UpDown, UpDownWide } from "./animations";
 import { useTheme } from "@chakra-ui/react";
-import { Button } from "@chakra-ui/react";
+import CircularProgressWithLabel from "./circularprogresswithlabel";
+import styles from "../styles/Skills.module.css";
 
-const About = ({ offset, factor = 1 }: { offset: number; factor?: number }) => {
+const Skills = ({
+  offset,
+  factor = 1,
+}: {
+  offset: number;
+  factor?: number;
+}) => {
   const theme = useTheme();
+  const skills = {
+    NodeJS: 90,
+    Python: 80,
+    Docker: 98,
+    Kubernetes: 85,
+    CICD: 90,
+    Terraform: 80,
+    Java: 85,
+    AWS: 60,
+  };
   return (
     <div>
-      <Divider
-        bg="linear-gradient(to right, red 0%, orange 100%)"
-        speed={-0.2}
-        offset={offset}
-        factor={factor}
-        clipPath={`polygon(0 15%, 100% 25%, 100% 85%, 0 75%)`}
-      />
-      <Divider speed={0.1} offset={offset} factor={factor}>
+      <Divider speed={0.4} offset={offset} factor={factor}>
         <UpDown>
           <Svg
             icon="box"
@@ -113,27 +123,31 @@ const About = ({ offset, factor = 1 }: { offset: number; factor?: number }) => {
           top="70%"
         />
       </Divider>
+      <Divider
+        bg={theme.colors.divider}
+        clipPath={`polygon(0 16%, 100% 4%, 100% 82%, 0 94%)`}
+        speed={0.2}
+        offset={offset}
+        factor={factor}
+      />
       <Content speed={0.4} offset={offset} factor={factor}>
-        <div style={{ maxWidth: "1000px" }}>
-          <Inner>
-            <h2>About</h2>
-            <p style={{ textAlign: "justify" }}>
-              Nithin is a logical and results driven Full Stack Developer and a
-              Test Automation Speacialist dedicated to building and optimizing
-              user-focused websites and applications. 7 plus years of experience
-              in Analyzing, Designing, Developing and Integrating front end and
-              back end applications. Judicious and creative when crafting
-              effective websites, apps and platforms to propel competetive
-              advantage and revenue growth. Technically proficient and
-              analytical problem solver with calm and focused demeanor
-            </p>
-            <br />
-            <Button bg={`primary`}>Download Resume</Button>
-          </Inner>
-        </div>
+        <Inner>
+          <div className={styles.skills}>
+            <h2 style={{ gridColumn: "-1/1", color: "white !important" }}>
+              Skills
+            </h2>
+            <CircularProgressWithLabel value={90} label={"NodeJS"} />
+            <CircularProgressWithLabel value={80} label={"Python"} />
+            <CircularProgressWithLabel value={98} label={"Docker"} />
+            <CircularProgressWithLabel value={85} label={"Kubernetes"} />
+            <CircularProgressWithLabel value={90} label={"CI/CD"} />
+            <CircularProgressWithLabel value={80} label={"Terraform"} />
+            <CircularProgressWithLabel value={85} label={"Java"} />
+          </div>
+        </Inner>
       </Content>
     </div>
   );
 };
 
-export default About;
+export default Skills;

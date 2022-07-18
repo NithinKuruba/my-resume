@@ -1,5 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import { ParallaxLayer } from "@react-spring/parallax";
+import { jsx } from "@chakra-ui/react";
 
 type ContentProps = {
   speed: number;
@@ -18,11 +19,10 @@ const Content = ({
 }: ContentProps) => (
   <ParallaxLayer
     style={{
-      display: `flex`,
-      padding: 5,
-      flexDirection: `column`,
-      alignItems: `center`,
-      justifyContent: `center`,
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
       zIndex: 50,
     }}
     speed={speed}

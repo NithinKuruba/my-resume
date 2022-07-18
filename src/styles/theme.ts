@@ -86,7 +86,7 @@ export const customTheme = extendTheme({
         },
       },
       p: {
-        fontSize: [1, 2],
+        fontSize: 20,
         letterSpacing: `-0.003em`,
         lineHeight: `body`,
         "--baseline-multiplier": 0.179,
@@ -102,26 +102,29 @@ export const customTheme = extendTheme({
         },
       },
       h1: {
-        fontSize: 8,
+        fontSize: 80,
         mt: 2,
         mb: 3,
         textShadow: `rgba(255, 255, 255, 0.15) 0px 5px 35px`,
         letterSpacing: `wide`,
-        color: `heading`,
+        color: "heading",
+        fontWeight: `bold`,
       },
       h2: {
-        fontSize: [4, 5, 6],
+        fontSize: 50,
         mt: 2,
         mb: 2,
         color: `heading`,
+        fontWeight: `semibold`,
+        textDecoration: "underline",
       },
       h3: {
-        fontSize: [3, 4, 5],
+        fontSize: 30,
         mt: 3,
         color: `heading`,
       },
       h4: {
-        fontSize: [2, 3, 4],
+        fontSize: 20,
         color: `heading`,
       },
       h5: {
@@ -149,13 +152,6 @@ export const customTheme = extendTheme({
         px: 3,
         py: 2,
         ml: 3,
-      },
-    },
-    texts: {
-      bigger: {
-        p: {
-          fontSize: [2, 3, 4],
-        },
       },
     },
   },

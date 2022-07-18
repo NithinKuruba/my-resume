@@ -153,9 +153,7 @@ const Title = ({ offset, factor = 1 }: { offset: number; factor?: number }) => (
     </Divider>
     <Content speed={0.4} offset={offset} factor={factor}>
       <Inner>
-        <Box fontSize={"7xl"} fontWeight={"bold"} padding={200}>
-          Hi, I'm Nithin Shekar Kuruba
-        </Box>
+        <h1>Hi, I'm Nithin Shekar Kuruba</h1>
       </Inner>
     </Content>
   </div>

@@ -7,8 +7,7 @@ const Inner = ({ className = ``, children }: InnerProps) => (
   <div
     style={{
       width: "100%",
-      textAlign: `left`,
-      fontSize: 100,
+      textAlign: "center",
     }}
     className={className}
   >
